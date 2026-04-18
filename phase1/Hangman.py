@@ -4,37 +4,42 @@ print(" ")
 print("Welcome to Hangman")
 print(" ")
 print("Im thinking of a word and you will try to guess it in 8 or under tries!")
-print(" ")
-category = input("Choose norwegian or english (n/e): ")
 
 
 def clear_ansi():
     print("\033[H\033[J", end="")       # Clears the terminal screen
 
 
-if category == "n":
-    word_database = [
-        # Norwegian words
-        "hund", "katt", "bil", "hus", "bok", "sol", "regn", "snø", "vind", "fjell",
-        "sjø", "skog", "blomst", "fugl", "fisk", "eple", "banan", "melk", "brød", "ost",
-        "stol", "bord", "vindu", "dør", "lampe", "klokke", "skole", "lærer", "elev", "venn",
-        "familie", "mor", "far", "bror", "søster", "bestemor", "bestefar", "baby", "gutt", "jente",
-        "dag", "natt", "morgen", "kveld", "uke", "måned", "sommer", "vinter", "høst", "vår"
-    ]
-    clear_ansi()
+while True:
+    print(" ")
+    category = input("Choose norwegian or english (n/e): ")
 
-elif category == "e":
-    word_database = [
-        "apple", "train", "beach", "cloud", "dream", "eagle", "flame", "grape", "happy", "island",
-        "jungle", "kite", "lemon", "music", "night", "ocean", "piano", "queen", "river", "stone",
-        "tiger", "umbrella", "valley", "wallet", "yellow", "zebra", "bridge", "candle", "dinner", "earth",
-        "forest", "garden", "harbor", "igloo", "jacket", "kettle", "ladder", "mirror", "needle", "orange",
-        "pencil", "rabbit", "shadow", "temple", "uncle", "violet", "window", "explore", "farmer", "golden",
-    ]
-    clear_ansi()
+    if category == "n":
+        word_database = [
+            "hund", "katt", "bil", "hus", "bok", "sol", "regn", "snø", "vind", "fjell",
+            "sjø", "skog", "blomst", "fugl", "fisk", "eple", "banan", "melk", "brød", "ost",
+            "stol", "bord", "vindu", "dør", "lampe", "klokke", "skole", "lærer", "elev", "venn",
+            "familie", "mor", "far", "bror", "søster", "bestemor", "bestefar", "baby", "gutt", "jente",
+            "dag", "natt", "morgen", "kveld", "uke", "måned", "sommer", "vinter", "høst", "vår"
+        ]
+        clear_ansi()
+        break
 
-else:
-    print("Choose a catergory between norwgegian (answer with a simple n) or english (answer with a simple e)")
+    elif category == "e":
+        word_database = [
+            "apple", "train", "beach", "cloud", "dream", "eagle", "flame", "grape", "happy", "island",
+            "jungle", "kite", "lemon", "music", "night", "ocean", "piano", "queen", "river", "stone",
+            "tiger", "umbrella", "valley", "wallet", "yellow", "zebra", "bridge", "candle", "dinner", "earth",
+            "forest", "garden", "harbor", "igloo", "jacket", "kettle", "ladder", "mirror", "needle", "orange",
+            "pencil", "rabbit", "shadow", "temple", "uncle", "violet", "window", "explore", "farmer", "golden",
+        ]
+        clear_ansi()
+        break
+
+    else:
+        clear_ansi()
+        print("Choose a catergory between norwgegian (answer with a simple n) or english (answer with a simple e)")
+
 
 # Chooses a word at random from the database
 word = random.choice(word_database)
